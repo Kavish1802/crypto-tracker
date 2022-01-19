@@ -9,18 +9,18 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Qahiri', sans-serif;
 */
 
-body{
-  padding: 0;
-  margin:0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: 'Qahiri', sans-serif;
-  min-height: 100vh;
-  background-color: rgb(41, 46, 46);
-  color:white;
+.MuiList-padding {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
-a{
-  text-decoration: none;
-  color:gold;
+.wow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* float:; */
+}
+
+.MuiOutlinedInput-input{
+    color:white;
 }
