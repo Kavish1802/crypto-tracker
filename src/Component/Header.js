@@ -55,8 +55,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#7A8787",
     padding: "3px",
   },
-  leftgap:{
-    marginLeft:"50px"
+  leftgap: {
+    marginLeft: "50px"
   }
 }));
 
@@ -89,11 +89,12 @@ const Header = () => {
           <div>
             <Select
               value={capi.currency}
+              id="switchCurrency"
               onChange={handleChange}
               className={classes.curr}
             >
-              <MenuItem value={"INR"} >INR</MenuItem>
-              <MenuItem value={"USD"} >USD</MenuItem>
+              <MenuItem value={"INR"}>INR</MenuItem>
+              <MenuItem value={"USD"}>USD</MenuItem>
             </Select>
             <NavbarDrawer />
           </div>
@@ -113,6 +114,7 @@ const Header = () => {
             </Link>
             <Select
               value={capi.currency}
+              id="switchCurrency"
               onChange={handleChange}
               className={`${classes.curr} ${classes.leftgap}`}
             >

@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {Button, makeStyles} from '@material-ui/core'
 
 const usestyles=makeStyles((theme)=>({
     container:{
         display:'flex',
         justifyContent:'space-around',
+        marginBottom:'20px'
     },
 }))
 
@@ -25,6 +26,7 @@ export const ChartButton = ({unit,setunit}) => {
         <div className={classes.container}>
             <Button
             variant='outlined'
+            id='1day'
             style={{
                 color:unit===1?'black':'',
                 backgroundColor:unit===1?'gold':'',
@@ -41,6 +43,7 @@ export const ChartButton = ({unit,setunit}) => {
             </Button>
             <Button
             variant='outlined'
+            id='30day'
             style={{
                 color:unit===30?'black':'',
                 backgroundColor:unit===30?'gold':'',
@@ -57,6 +60,7 @@ export const ChartButton = ({unit,setunit}) => {
             </Button>
             <Button
             variant='outlined'
+            id='90day'
             style={{
                 color:unit===90?'black':'',
                 backgroundColor:unit===90?'gold':'',
@@ -73,6 +77,7 @@ export const ChartButton = ({unit,setunit}) => {
             </Button>
             <Button
             variant='outlined'
+            id='365day'
             style={{
                 color:unit===365?'black':'',
                 backgroundColor:unit===365?'gold':'',

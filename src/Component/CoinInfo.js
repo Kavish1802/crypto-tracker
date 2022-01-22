@@ -18,10 +18,17 @@ export const CoinInfo = ({ coin }) => {
         sethistorical(data);
     }
 
+    // fetchHistorical();
+
     useEffect(() => {
         fetchHistorical();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [capi.currency,unit])
+
+    window.setTimeout(() => {
+        if(!historical)
+        fetchHistorical();
+    }, 1000);
 
     console.log('the historical data is', historical);
 

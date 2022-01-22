@@ -25,6 +25,7 @@ const usestyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: '25px',
+        marginLeft:'20px',
         borderRight: '2px solid grey',
     },
     chartArea:{
@@ -47,7 +48,6 @@ const usestyles = makeStyles((theme) => ({
 }))
 
 export const CoinsPage = () => {
-
     const { id } = useParams();
     console.log(id);
     const classes = usestyles()

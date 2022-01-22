@@ -5,6 +5,7 @@ import App from './App';
 // import WebFont from 'webfontloader';
 import { BrowserRouter } from 'react-router-dom';
 import 'react-alice-carousel/lib/alice-carousel.css'
+import CreateState from './Component/ContextApi/CreateState';
 
 // WebFont.load({
 //   google: {
@@ -14,7 +15,9 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <CreateState>
+      <App />
+    </CreateState>
   </BrowserRouter>,
   document.getElementById('root')
 );

@@ -8,6 +8,10 @@ import Context from '../ContextApi/CreateContext'
 import { CoinList } from '../gecko/geckoApi'
 import '../FontStyle.css'
 
+// import alanBtn from '@alan-ai/alan-sdk-web';
+
+// const alanKey='8e542ce0b8a7c315c916690fe0240d2c2e956eca572e1d8b807a3e2338fdd0dc/stage'
+
 const usestyle=makeStyles((theme)=>({
     neg:{
         color:'#E64239',
@@ -51,6 +55,24 @@ export const CryptoTable = () => {
         FetchCoin();
     }, [capi.currency])
 
+    // useEffect(() => {
+    //     searchOnChange(document.getElementById('searchCryptoHome'));
+    // }, []);
+    
+
+    // useEffect(() => {
+    //     alanBtn({
+    //         key:alanKey,
+    //         onCommand:({command,val})=>{
+    //             if(command==='search')
+    //             {
+    //                 console.log('search',val);
+    //             }
+    //         }
+    //     })
+    // }, []);
+    
+
     // console.log(fetchCoin);
 
     const darkTheme=createTheme({
@@ -89,6 +111,14 @@ export const CryptoTable = () => {
         )
     }
 
+    const searchOnChange=(e)=>{
+        setsearch(e.target.value);
+        console.log('change called');
+    }
+
+    console.log(search);
+    
+
     const navigate=useNavigate();
     return (
         <ThemeProvider theme={darkTheme}>
@@ -103,8 +133,10 @@ export const CryptoTable = () => {
                 <TextField 
                 label="Search for a Crypto..." 
                 variant='outlined'
+                id='searchCryptoHome'
                 style={{marginBottom:20,width:'100%',color:'white'}}
-                onChange={(e)=>setsearch(e.target.value)}
+                onChange={searchOnChange}
+                onClick={searchOnChange}
                 />
             
 

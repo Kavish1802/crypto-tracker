@@ -18,8 +18,23 @@ const CreateState=(props)=>{
         // console.log(symbol)
     }
 
+    const fullchange=()=>{
+        console.log('yay');
+        if(currency==="INR")
+        {
+            setsymbol("$")
+            setcurrency('USD')
+        }
+        else
+        {
+            setsymbol("₹")
+            setcurrency('INR');
+        }
+        // console.log(symbol)
+    }
+
     return (
-        <Context.Provider value={{ChangeCurrency,currency,setcurrency,symbol}}>
+        <Context.Provider value={{ChangeCurrency,currency,setcurrency,symbol,setsymbol,fullchange}}>
             {props.children}
         </Context.Provider>
     )
