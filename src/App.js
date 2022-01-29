@@ -11,6 +11,8 @@ import { CoinsPage } from './Component/CoinsPage';
 
 import alanBtn from '@alan-ai/alan-sdk-web';
 import Context from './Component/ContextApi/CreateContext';
+import { SignUp } from './Component/SignUp';
+import Login from './Component/Login';
 
 const alanKey = '8e542ce0b8a7c315c916690fe0240d2c2e956eca572e1d8b807a3e2338fdd0dc/stage'
 
@@ -78,10 +80,12 @@ function App() {
         }
       }
     })
+    // eslint-disable-next-line
   }, []);
 
-  { console.log(capi.currency, capi.symbol) }
+  // { console.log(capi.currency, capi.symbol) }
 
+  // console.log(window.location.pathname)
 
   return (
     <>
@@ -94,6 +98,8 @@ function App() {
               <Route exact path="/portfolio" element={<Portfolio />} />
               <Route exact path="/market" element={<Market />} />
               <Route exact path="/coins/:id" element={<CoinsPage />} />
+              <Route exact path="/signup" element={<SignUp/>}/>
+              <Route exact path="/login" element={<Login/>}/>
             </Routes>
           </div>
         </div>

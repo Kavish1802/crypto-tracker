@@ -9,10 +9,11 @@ import {
   Select,
   MenuItem
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import NavbarDrawer from './NavbarDrawer'
 import './FontStyle.css'
 import Context from "./ContextApi/CreateContext";
+import { Button } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -63,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
 
   const capi = useContext(Context);
+  const navigate=useNavigate();
 
   console.log(capi.currency);
   console.log(capi.symbol);
@@ -76,12 +78,35 @@ const Header = () => {
     capi.ChangeCurrency();
   };
 
+  const handleLogout=()=>{
+    localStorage.removeItem('token');
+    navigate('/login')
+  }
+
   return (
     <AppBar position="static">
       <Toolbar className={classes.appbar}>
         <Typography variant="h4" className={classes.logo}>
           Crypto Hunter
         </Typography>
+        
+        {(window.location.pathname!=='/login'&&window.location.pathname!=='/signup')?
+        (
+          <Button
+          // variant="outlined"
+          style={{
+            color:'white',
+            borderColor:'white',
+            marginLeft:'5px'
+          }}
+          onClick={handleLogout}
+          >
+            Log Out
+          </Button>
+        ):
+        (
+          ''
+        )}
         {/* .............. */}
 
         {/* .............. */}
