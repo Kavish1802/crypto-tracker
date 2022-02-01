@@ -134,8 +134,8 @@ const Header = () => {
             <Link to="/portfolio" className={classes.link}>
               Portfolio
             </Link>
-            <Link to="/market" className={classes.link}>
-              Market
+            <Link to="/watchlist" className={classes.link}>
+              WatchList
             </Link>
             <Select
               value={capi.currency}

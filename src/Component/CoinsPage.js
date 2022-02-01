@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Collapse, LinearProgress, makeStyles, Typography } from '@material-ui/core'
+import { Button, Collapse, LinearProgress, makeStyles, Typography } from '@material-ui/core'
 import axios from 'axios'
 import { SingleCoin } from './gecko/geckoApi'
 import { CoinInfo } from './CoinInfo'
@@ -25,13 +25,13 @@ const usestyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: '25px',
-        marginLeft:'20px',
+        marginLeft: '20px',
         borderRight: '2px solid grey',
     },
-    chartArea:{
-        width:'65%',
-        [theme.breakpoints.down('sm')]:{
-            width:'95%'
+    chartArea: {
+        width: '65%',
+        [theme.breakpoints.down('sm')]: {
+            width: '95%'
         },
         display: 'flex',
         flexDirection: 'column',
@@ -57,6 +57,7 @@ export const CoinsPage = () => {
 
     const fetchData = async () => {
         const { data } = await axios.get(SingleCoin(id));
+        console.log(data);
         setcoin(data);
     }
 
@@ -155,6 +156,40 @@ export const CoinsPage = () => {
                         {capi.symbol}{" "}{coin?.market_data.market_cap[capi.currency.toLowerCase()]}
                     </Typography>
                 </div>
+                <div style={{
+                    display: 'flex',
+                }}
+                >
+                    <Button
+                        variant='outlined'
+                        style={{
+                            color: 'white',
+                            backgroundColor: 'purple',
+                            fontWeight: 700,
+                            margin:'20px',
+                        }}
+                        onClick={() => {
+                        }}
+                    >
+                        Buy Now
+                    </Button>
+                    <Button
+                        variant='outlined'
+                        style={{
+                            color: 'white',
+                            backgroundColor: 'purple',
+                            fontWeight: 700,
+                            margin:'20px',
+                        }}
+                        onClick={() => {
+                            console.log(coin.id);
+                            capi.ConcatCoin(coin.id);
+                            // alert('coin added')
+                        }}
+                    >
+                        Add to Watchlist
+                    </Button>
+                </div>
                 <Typography
                     className={classes.desc}
                     onClick={handleClick}
@@ -172,3 +207,7 @@ export const CoinsPage = () => {
         </div>
     )
 }
+
+
+
+

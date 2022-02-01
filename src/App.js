@@ -5,7 +5,6 @@ import Header from './Component/Header';
 import { makeStyles } from '@material-ui/core';
 import { Home } from './Component/Home';
 import { About } from './Component/About';
-import { Market } from './Component/Market';
 import { Portfolio } from './Component/Portfolio';
 import { CoinsPage } from './Component/CoinsPage';
 
@@ -13,6 +12,7 @@ import alanBtn from '@alan-ai/alan-sdk-web';
 import Context from './Component/ContextApi/CreateContext';
 import { SignUp } from './Component/SignUp';
 import Login from './Component/Login';
+import { WatchList } from './Component/WatchList';
 
 const alanKey = '8e542ce0b8a7c315c916690fe0240d2c2e956eca572e1d8b807a3e2338fdd0dc/stage'
 
@@ -96,7 +96,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/portfolio" element={<Portfolio />} />
-              <Route exact path="/market" element={<Market />} />
+              <Route exact path="/watchlist" element={<WatchList />} />
               <Route exact path="/coins/:id" element={<CoinsPage />} />
               <Route exact path="/signup" element={<SignUp/>}/>
               <Route exact path="/login" element={<Login/>}/>

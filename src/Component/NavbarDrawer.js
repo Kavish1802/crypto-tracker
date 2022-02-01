@@ -55,7 +55,7 @@ function NavbarDrawer() {
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/market" className={classes.link}>Market</Link>
+              <Link to="/watchlist" className={classes.link}>WatchList</Link>
             </ListItemText>
           </ListItem>
         </List>

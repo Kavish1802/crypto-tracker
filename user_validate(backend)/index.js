@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/Cryptoapi/auth', require('./routes/auth'));
+app.use('/Cryptoapi/authPortfolio',require('./routes/authPortfolio'))
 
 // app.get('/',(req,res)=>{
 //     try{

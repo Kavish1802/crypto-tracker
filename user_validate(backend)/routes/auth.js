@@ -110,10 +110,9 @@ router.post('/login',
     })
 
 router.post('/getUser',
-    fetchUsers,
     async (req,res)=>{
         try{
-            let userId=req.user.id;
+            let userId=localStorage.getItem('token');
             const user=await User.findOne(userId).select("-password");
             res.send(user);
         }
