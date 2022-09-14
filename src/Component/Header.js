@@ -90,7 +90,7 @@ const Header = () => {
           Crypto Hunter
         </Typography>
         
-        {(window.location.pathname!=='/login'&&window.location.pathname!=='/signup')?
+        {(window.location.pathname!=='/login' && window.location.pathname!=='/signup')?
         (
           <Button
           // variant="outlined"

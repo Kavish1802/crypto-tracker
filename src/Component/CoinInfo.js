@@ -63,6 +63,7 @@ export const CoinInfo = ({ coin }) => {
                                     `${date.getHours() - 12}:${date.getMinutes()} PM` :
                                     `${date.getHours()}:${date.getMinutes()} AM`
                             return unit === 1 ? time : date.toLocaleString()
+                            // return date
                         }),
 
                         datasets: [{
