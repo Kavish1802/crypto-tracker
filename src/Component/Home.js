@@ -6,14 +6,16 @@ import Login from './Login';
 
 export const Home = () => {
 
-    return (localStorage.getItem('token')?(
+    return (
+        // localStorage.getItem('token')?(
         
         <div>
             <BelowNavbar />
             <CryptoTable/>
-        </div>):
-        (<div>
-            <Login/>
-        </div>)
+        </div>
+        // //):
+        // (<div>
+        //     {/* <Login/> */}
+        // </div>)
     )
 }

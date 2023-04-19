@@ -98,8 +98,8 @@ function App() {
               <Route exact path="/portfolio" element={<Portfolio />} />
               <Route exact path="/watchlist" element={<WatchList />} />
               <Route exact path="/coins/:id" element={<CoinsPage />} />
-              <Route exact path="/signup" element={<SignUp/>}/>
-              <Route exact path="/login" element={<Login/>}/>
+              {/* <Route exact path="/signup" element={<SignUp/>}/>
+              <Route exact path="/login" element={<Login/>}/> */}
             </Routes>
           </div>
         </div>
